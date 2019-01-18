@@ -5,7 +5,7 @@ require_once 'include/protect.php';
 
 $dao = new OperatorDAO();
 $leaderboard = $dao->retrieveAll();
-$user_point = $dao->retrieve('Amy');
+$user_point = $dao->retrieve('amy');
     
 ?>
 
@@ -14,7 +14,7 @@ $user_point = $dao->retrieve('Amy');
     <body>
         <?php include 'include/header.php' ; ?>
         
-        <h1><?php $user_point->points?>POINTS</h1>
+        <h1><?php echo $user_point->points;?> POINTS</h1>
         <br></br>
         <br></br>
         <br></br>
@@ -33,7 +33,7 @@ $user_point = $dao->retrieve('Amy');
               echo "
               <tr>
                   <td>$user->rank</td>
-                  <td>$user->name</td>
+                  <td>$user->operator_name</td>
                   <td>$user->points</td>
               </tr>
               ";
@@ -43,7 +43,8 @@ $user_point = $dao->retrieve('Amy');
           
           </table>
 
-          <>
+          <a href="FAQ.php">FAQ</a>
+          <a href="claim.php">Claim</a>
         </div>
     </body>
 </html>

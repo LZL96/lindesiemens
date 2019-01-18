@@ -2,7 +2,7 @@
 
 class OperatorDAO {
 
-    public function retreiveAll() {
+    public function retrieveAll() {
         $sql = "select * from operator";
 
         $connMgr = new ConnectionManager();
@@ -13,17 +13,18 @@ class OperatorDAO {
         $stmt->execute();
 
         $output = [];
-        while ($row = $stmt->fetch(PDO::ASSOC)) {
-            $result[] = new Operator($row["id"], $row["operator_name"], $row["points"]);
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            $output[] = new Operator($row["id"], $row["operator_name"], $row["points"]);
         }
         return $output;
     }
 
-    public function retreive($name) {
-        $all = $this->retreiveAll();
-        foreach ($all as $temp) {
-            if (strtolow($temp) == strtolower($name)) {
-                return $temp; 
+    public function retrieve($name) {
+        $all = $this->retrieveAll();
+        foreach ($all as $operator) {
+            
+            if (strtolower($operator->operator_name) == strtolower($name)) {
+                return $operator; 
             }
         }
     }

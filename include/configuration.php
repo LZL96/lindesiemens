@@ -6,7 +6,7 @@ $storeid = 0;
 $server = "localhost";
 $username = "root";
 $password = "";  
-$dbname = "bookstore";
+$dbname = "hackathon";
 $port = 3306;    
 
 ?>
