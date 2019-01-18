@@ -3,9 +3,9 @@
 require_once 'include/common.php';
 require_once 'include/protect.php';
 
-$dao = new pointDAO();
+$dao = new OperatorDAO();
 $leaderboard = $dao->retrieveAll();
-$user_point = $dao->retrieveuser();
+$user_point = $dao->retrieve('Amy');
     
 ?>
 
@@ -14,7 +14,7 @@ $user_point = $dao->retrieveuser();
     <body>
         <?php include 'include/header.php' ; ?>
         
-        <h1><?php $user_point?>POINTS</h1>
+        <h1><?php $user_point->points?>POINTS</h1>
         <br></br>
         <br></br>
         <br></br>

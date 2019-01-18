@@ -43,7 +43,6 @@ $user_point = $dao->retrieveuser();
           
           </table>
 
-          <>
         </div>
     </body>
 </html>
