@@ -29,7 +29,7 @@ if ($username == "admin" && $enteredPwd == "admin"){
 	$_SESSION['user'] = $user;
 	$token = generate_token($username);
     $_SESSION['token'] = $token;
-	header("Location: admin.php");
+	header("Location: admin-view.php");
 }    
 # This is for the rest of users
 elseif (isset($user) && $user->authenticate($enteredPwd)) {
