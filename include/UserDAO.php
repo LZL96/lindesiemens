@@ -21,7 +21,7 @@ class UserDAO {
     }
 
     public  function retrieveAll() {
-        $sql = 'select * from customers';
+        $sql = 'select * from operator';
         
         $connMgr = new ConnectionManager();      
         $conn = $connMgr->getConnection();

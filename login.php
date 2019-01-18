@@ -29,14 +29,14 @@ if ($username == "admin" && $enteredPwd == "admin"){
 	$_SESSION['user'] = $user;
 	$token = generate_token($username);
     $_SESSION['token'] = $token;
-	header("Location: list-view.php");
+	header("Location: admin.php");
 }    
 # This is for the rest of users
 elseif (isset($user) && $user->authenticate($enteredPwd)) {
     $_SESSION['user'] = $user;
     $token = generate_token($username);
     $_SESSION['token'] = $token;
-    header("Location: list-view.php");
+    header("Location: operator-view.php");
 } else {
     $_SESSION['errors'] = [ 'Username/password is incorrect' ];
     include 'login-view.php';
