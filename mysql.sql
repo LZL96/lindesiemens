@@ -7,8 +7,6 @@ create table operator(
 	points int
 );
 
-drop table record;
-
 create table record(
 	operator_name varchar(250), 
     description varchar(250),
@@ -20,18 +18,38 @@ create table record(
 
 insert into operator values ("amy",30),
 							("bob",50),
-                            ("carl",70);
+                            ("carl",70),
+                            ("dan",20),
+                            ("ellie",-60),
+                            ("fred",-30),
+                            ("greg",190),
+                            ("harold",0);
+                            
                             
 insert into record (operator_name, description, points) values 	("amy","caught smoking",-20),
 							("amy","caught playing a fool",-10),
                             ("bob","incident free for 3 months",20),
                             ("carl","caught not wearing helmet",-50),
-                            ("carl","incident free for 3 months",20);
+                            ("carl","incident free for 3 months",20),
+                            ("dan","Operating equipment without qualification or authorization",-30),
+							("dan","Lack of/or improper use of PPE",-20),
+							("Ellie","Operation equipment at unsafe speeds",-30),
+							("Ellie","Failure to warn",-30),
+							("Ellie","Bypass or removal of safety devices",-30),
+							("Fred","Using defective equipment",-10),
+							("Fred","incident free for 3 months",20),
+							("Greg","incident free for 3 months",20),
+							("Greg","incident free for 6 months",40),
+							("Greg","incident free for 9 months", 60),
+							("Greg","incident free for 1 year",80),
+							("Harold","caught smoking",-30),
+							("Harold","almost fell of high place",-50);
                         
 -- Table structure for table admin_user
 --
 
 DROP TABLE IF EXISTS admin_user;
+
 CREATE TABLE admin_user (
   username varchar(32) NOT NULL,
   gender varchar(45) DEFAULT NULL,
