@@ -26,7 +26,8 @@ insert into operator values ("amy",30),
                             ("harold",0);
                             
                             
-insert into record (operator_name, description, points) values 	("amy","caught smoking",-20),
+insert into record (operator_name, description, points) values 	
+							("amy","caught smoking",-20),
 							("amy","caught playing a fool",-10),
                             ("bob","incident free for 3 months",20),
                             ("carl","caught not wearing helmet",-50),

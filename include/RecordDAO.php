@@ -35,5 +35,19 @@ class RecordDAO {
         return $output;
     }
 
+    public function add($record) {
+        $sql = "insert into record(operator_name, description, points) values (:operator_name, :description, :points)";
+
+        $connMgr = new ConnectionManager();
+        $conn = $connMgr->getConnection();
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindParam(':operator_name', $record->operator_name, PDO::PARAM_STR);
+        $stmt->bindParam(':description', $record->description, PDO::PARAM_STR);
+        $stmt->bindParam(':points', $record->points, PDO::PARAM_STR);
+
+        if ($stmt->execute()) return "wuhu";
+        else return $sql;
+    }
 
 }
